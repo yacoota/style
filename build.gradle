@@ -1,0 +1,64 @@
+// https://gitee.com/52itstyle/spring-boot-task.git
+// https://gitee.com/52itstyle/spring-boot-log.git
+// https://gitee.com/52itstyle/spring-boot-pay.git
+// https://gitee.com/52itstyle/spring-boot-doc.git
+// https://gitee.com/52itstyle/spring-boot-blog.git
+// https://gitee.com/52itstyle/spring-boot-bpmn.git
+// https://gitee.com/52itstyle/spring-boot-seckill.git
+group 'com.itstyle.quartz'
+version '0.0.1'
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    sourceCompatibility = targetJavaVersion
+    targetCompatibility = targetJavaVersion
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    configurations {
+        all*.exclude group: 'commons-logging'
+
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok:1.18.12"
+        annotationProcessor "org.projectlombok:lombok:1.18.12"
+        testCompileOnly "org.projectlombok:lombok:1.18.12"
+        testAnnotationProcessor "org.projectlombok:lombok:1.18.12"
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            resources {
+                srcDirs = ['src/main/webapp', 'src/main/resources']
+            }
+        }
+    }
+
+    jar {
+        manifest {
+            attributes("provider": "Gradle")
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    }
+    defaultTasks 'clean', 'build', 'assemble'
+}

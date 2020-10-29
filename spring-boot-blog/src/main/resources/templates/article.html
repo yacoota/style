@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="shortcut icon" href="images/ico.jpg" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="referrer" content="no-referrer"/>
+	<meta http-equiv="Expires" content="0">
+	<title th:text="${blog.title}"></title>
+	<meta name="keywords" content="SpringBoot、微服务、Dubbo、项目源码、Java" />
+	<meta name="description" content="SpringBoot、微服务、Dubbo、项目源码、Java" />
+
+	<link rel='stylesheet' id='style-css'  href='css/style.css' type='text/css' media='all' />
+
+	<link rel='stylesheet' id='all-css'  href='css/all.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='lmlblog-css'  href='css/lmlblog.css' type='text/css' media='all' />
+	<script type='text/javascript' src='js/jquery.min.js'></script>
+
+	<script type='text/javascript' src="editor/marked.min.js"></script>
+	<script type='text/javascript' src="editor/prettify.min.js"></script>
+	<script type='text/javascript' src="editor/raphael.min.js"></script>
+	<script type='text/javascript' src="editor/underscore.min.js"></script>
+	<script type='text/javascript' src="editor/sequence-diagram.min.js"></script>
+	<script type='text/javascript' src="editor/flowchart.min.js"></script>
+	<script type='text/javascript' src="editor/jquery.flowchart.min.js"></script>
+	<script type='text/javascript' src="editor/editormd.min.js"></script>
+</head>
+<body>
+<!--菜單-->
+<div th:include="common/menu :: menu"></div>
+<!-- menu-bar -->
+<div style="clear: both;"></div>
+<div class="lmlblog-member-main">
+	<div class="lmlblog-member-bg">
+		<div>
+			<div class="lmlblog-member-content-list clear">
+				<!--左側-->
+				<div th:include="common/artlicle_left :: left"></div>
+				<!--右側-->
+				<div class="lmlblog-member-right">
+					<div class="lmlblog-post-list">
+						<div  class="lmlblog-posts-list words" style="background-image:url(images/588.png); " data="4197">
+							<!-- 动态内容部分，包括列表 -->
+							<div class="lmlblog-post-user-info">
+								<div class="lmlblog-post-user-info-avatar" user-data="1">
+									<a href="index" target="view_window" style="display: inline-block;">
+										<span class="lmlblog-vip-icon"></span><img src="picture/tx2.jpg" class="avatar"/>
+										<i class="lmlblog-verify lmlblog-verify-a" title="司空琪"></i></a>
+								</div>
+
+								<div class="lmlblog-post-user-info-name">
+									<a href="index" target="view_window">
+										<font style="color:#333;font-weight:600">司空琪</font>
+									</a>
+									<span class="lmlblog-mark lmlblog-lv" title="经验：3815">Lv.6</span><span class="lmlblog-mark lmlblog-vip">VIP 6</span>
+								</div>
+								<div class="lmlblog-post-user-info-time" th:text="${blog.createTime}"></div>
+							</div>
+							<div class="lmlblog-post-setting">
+								<i class="fa fa-angle-down"></i>
+							</div>
+							<div class="lmlblog-post-content qi">
+								<h1 align=center>　　<STRONG th:text="${blog.title}"></STRONG></h1>
+								<div id="article">
+								　　<textarea  th:text="${blog.content}"  style="display:none;" placeholder="markdown语言">
+									</textarea>
+								</div>
+								</br>
+								原文地址：<span th:text="${blog.url}"></span>
+							</div>
+							<div class="lmlblog-post-bar">
+								<li class="lmlblog-no-like">
+									<i class="lmlblog-icon">&#xe608;</i> <span th:text="${blog.views}">5</span>
+								</li>
+								<li>
+									<i class="lmlblog-icon">&#xe633;</i> <span>5</span>
+								</li>
+								<li>
+									<i class="lmlblog-icon"></i>评论 <span>0</span>
+								</li>
+								<li>
+									<i class="lmlblog-icon">&#xe602;</i> <span>1.2w</span>
+								</li>
+							</div>
+							<div class="lmlblog-post-footer-bar">
+								<span>电脑端</span><i class="lmlblog-icon">&#xe62c;</i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div th:include="common/footer :: footer"></div>
+<!--左側妹子-->
+<div class=skq><img alt="司空琪 " src="picture/4e76042534f3ff06944968ce3d024af4.png"></div>
+</body>
+<script>
+editormd.markdownToHTML("article", {
+	htmlDecode      : "style,script,iframe",
+	emoji           : true,
+	taskList        : true,
+	tex             : true,  // 默认不解析
+	flowChart       : true,  // 默认不解析
+	sequenceDiagram : true  // 默认不解析
+});
+</script>
+</html>

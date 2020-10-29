@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<link rel="shortcut icon" href="images/ico.jpg" />
+	<title>markdown 在线编辑 - Editor.md</title>
+	<link rel='stylesheet' type='text/css' href='editor/css/style.css'/>
+	<link rel="stylesheet" type='text/css' href="editor/css/editormd.css" />
+</head>
+<body>
+<div id="layout">
+	<header>
+		<h1>在线编辑</h1>
+	</header>
+	<div id="test-editormd">
+         <textarea style="display:none;">
+
+		</textarea>
+	</div>
+</div>
+<div th:include="common/footer :: footer"></div>
+<script type='text/javascript' src='js/jquery.min.js'></script>
+<script type='text/javascript' src="editor/editormd.min.js"></script>
+<script type="text/javascript">
+	var testEditor;
+	$(function() {
+		testEditor = editormd("test-editormd", {
+			width   : "90%",
+			height  : 640,
+			syncScrolling : "single",
+			path    : "../editor/"
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+ext {
+    spring_boot_version = "2.1.6.RELEASE"
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.1.6.RELEASE')
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.springframework.boot:spring-boot-starter-quartz"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "net.sourceforge.nekohtml:nekohtml"
+    implementation "mysql:mysql-connector-java"
+    implementation "com.alibaba:druid:1.1.18"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}

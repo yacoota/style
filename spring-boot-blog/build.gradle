@@ -1,0 +1,30 @@
+ext {
+    spring_boot_version = "2.1.5.RELEASE"
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.1.5.RELEASE')
+    implementation platform('com.alibaba.cloud:spring-cloud-alibaba-dependencies:2.1.0.RELEASE')
+
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.springframework.boot:spring-boot-starter-quartz"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation("org.springframework.boot:spring-boot-starter-jdbc"){
+        exclude group:"org.apache.tomcat", module:"tomcat-jdbc"
+    }
+    implementation "org.springframework.boot:spring-boot-starter-cache"
+    implementation "org.springframework.boot:spring-boot-starter-data-redis"
+    implementation "org.springframework.boot:spring-boot-starter-quartz"
+
+    implementation "org.springframework.boot:spring-boot-starter-tomcat"
+    implementation "net.sourceforge.nekohtml:nekohtml"
+    implementation "mysql:mysql-connector-java"
+
+    implementation "com.zaxxer:HikariCP:3.3.1"
+    implementation "com.google.guava:guava:25.1-jre"
+    implementation "com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel"
+    implementation "com.alibaba.csp:sentinel-datasource-nacos:1.6.3"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}

@@ -1,0 +1,9 @@
+rootProject.name = 'style'
+include 'spring-boot-task'
+include 'spring-boot-log'
+include 'spring-boot-blog'
+include 'spring-boot-doc'
+include 'spring-boot-bpmn'
+include 'spring-boot-pay'
+include 'spring-boot-seckill'
+

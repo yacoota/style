@@ -1,0 +1,12 @@
+ext {
+    spring_boot_version = "1.5.2.RELEASE"
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.3.4.RELEASE')
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}

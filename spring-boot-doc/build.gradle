@@ -1,0 +1,19 @@
+ext {
+    spring_boot_version = "1.5.2.RELEASE"
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:1.5.2.RELEASE')
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "net.sourceforge.nekohtml:nekohtml"
+    implementation "mysql:mysql-connector-java"
+    implementation "com.github.penggle:kaptcha:2.3.2"
+    implementation "org.apache.commons:commons-lang3:3.6"
+    implementation "commons-io:commons-io:2.6"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}

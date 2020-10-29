@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<footer th:fragment="footer">
+    <div style="clear:both"></div>
+    <div class="footer">
+        <div class="footer_b_foot">
+            <div class="footer_b_top">
+            </div>
+            <div class="footer_b_bottom">Design by 2019。内容源于网络搜集,仅学习、分享交流。</div>
+        </div>
+    </div>
+    <!-- 返回顶部 -->
+    <a href="javascript:returnTop();" class="cd-top"></a>
+    <script type="text/javascript">
+    var sdelay = 0;
+    function returnTop() {
+        <!--    window.scrollBy(0, -100); //Only for y vertical-axis-->
+        <!--    if (document.body.scrollTop > 0) {-->
+        <!--        sdelay = setTimeout('returnTop()', 50);-->
+        <!--    }-->
+        window.scrollTo(0,0);
+    }
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2c18764595d939aeb74c2d92ca75d534";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+</footer>
+</html>
